@@ -19,10 +19,10 @@ public partial class LoginPage: Fuse.Controls.StackPanel
     {
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);
         Mail = new global::Fuse.Controls.TextInput();
-        Mail_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
+        Mail_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
         var temp = new global::Fuse.Reactive.Data("email");
         Password = new global::Fuse.Controls.TextInput();
-        Password_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
+        Password_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
         var temp1 = new global::Fuse.Reactive.Data("pass");
         var temp2 = new global::Fuse.Reactive.Data("gotoRouter");
         var temp3 = new global::Fuse.Reactive.JavaScript(__g_nametable);

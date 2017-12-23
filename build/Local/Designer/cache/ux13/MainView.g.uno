@@ -23,10 +23,10 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Fuse.Controls.Page();
             Mail = new global::Fuse.Controls.TextInput();
-            Mail_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
+            Mail_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
             var temp = new global::Fuse.Reactive.Data("email");
             Password = new global::Fuse.Controls.TextInput();
-            Password_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
+            Password_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
             var temp1 = new global::Fuse.Reactive.Data("pass");
             var temp2 = new global::Fuse.Reactive.Data("logIn");
             var temp3 = new global::Fuse.Controls.StackPanel();
