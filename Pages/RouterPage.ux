@@ -1,0 +1,30 @@
+<Panel ux:ClassName="RouterPage">
+    <JavaScript>
+	    module.exports = {
+	        gotoFirst: function() { router.goto("firstPage"); },
+	        gotoSecond: function() { router.goto("secondPage"); },
+	        gotoShop: function() { router.goto("shopPage"); },
+	    };
+	</JavaScript>
+
+	<Router ux:Name="router" />
+
+	<DockPanel>
+	    <Navigator DefaultTemplate="firstPage">
+	        <Page ux:Template="firstPage">
+	            <FirstPage/>
+	        </Page>
+	        <Page ux:Template="secondPage">
+	        	<SecondPage />
+	        </Page>
+	        <Page ux:Template="shopPage">
+	        	<ShopPage/>
+	        </Page>
+	    </Navigator>
+	</DockPanel>
+
+	<Grid Alignment="Bottom" Dock="Bottom" Columns="1*,1*">
+        <Button Text="First page" Padding="20" Clicked="{gotoFirst}" />
+        <Button Text="Second page" Padding="20" Clicked="{gotoSecond}" />
+    </Grid>
+</Panel>

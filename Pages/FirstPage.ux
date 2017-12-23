@@ -1,0 +1,3 @@
+<Panel ux:ClassName="FirstPage" Alignment="Center">
+	<Text Alignment="Center">This is the first page.</Text>
+</Panel>

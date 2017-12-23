@@ -1,0 +1,4 @@
+<Panel ux:ClassName="MailInput" PlaceholderText="">
+	<string ux:Property="PlaceholderText"/>
+	<TextInput ux:Name="Input" PlaceholderText="{Property PlaceholderText}" PlaceholderColor="#ccc" Height="50" Padding="5" />
+</Panel>

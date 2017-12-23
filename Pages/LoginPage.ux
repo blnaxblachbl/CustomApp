@@ -1,0 +1,27 @@
+<StackPanel ux:ClassName="LoginPage" Alignment="Center">
+	<JavaScript>
+
+		var Observable = require("FuseJS/Observable")
+
+		var email = Observable("")
+		var pass = Observable("")
+		
+		function logIn(){
+			if (email.value == "tit" && pass.value == "123"){
+				router1.goto("routerPage")
+			}else{
+				return null
+			}
+		}
+
+		module.export = {
+			logIn: logIn,
+			email: email,
+			pass: pass, 
+		}
+	</JavaScript>
+	<Text Alignment="Center">This is the login page.</Text>
+	<TextInput Value="{email}" ux:Name="Mail"  PlaceholderText="Type your email here..." PlaceholderColor="#ccc" Height="50" Padding="5" />
+	<TextInput Value="{pass}" ux:Name="Password"  PlaceholderText="Type your password..." PlaceholderColor="#ccc" Height="50" Padding="5" />
+	<Button Text="Log in" Padding="20" Clicked="{gotoRouter}" Color="#123"/>
+</StackPanel>

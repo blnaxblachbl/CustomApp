@@ -1,0 +1,41 @@
+<App>
+	<JavaScript>
+
+		var Observable = require("FuseJS/Observable")
+
+		var email = Observable("")
+		var pass = Observable("")
+		
+		function logIn(){
+			if (email.value == "tit" && pass.value == "123"){
+				router1.goto("routerPage")
+			}else{
+				return null
+			}
+		}
+
+	    module.exports = {
+			email: email,
+			pass: pass,
+	        logIn: logIn,
+	    };
+	</JavaScript>
+
+	<Router ux:Name="router1" />
+
+	<DockPanel>
+	    <Navigator DefaultTemplate="loginPage">
+			<Page  ux:Template="loginPage">
+				<StackPanel Height="100%" Width="100%" Alignment="Center">
+					<Text Alignment="Center" Padding="10">PLease login for contune...</Text>
+					<TextInput Value="{email}" ux:Name="Mail" PlaceholderText="Type your email here..." PlaceholderColor="#ccc" Height="50" Width="75%" Padding="5" />
+					<TextInput Value="{pass}" IsPassword="true" ux:Name="Password"  PlaceholderText="Type your password..." PlaceholderColor="#ccc" Height="50" Width="75%" Padding="5" />
+					<Button Text="Log in" Padding="20" Clicked="{logIn}" Height="50" Width="75%" Color="#123"/>
+				</StackPanel>
+			</Page>
+	        <Page ux:Template="routerPage">
+	        	<RouterPage />
+	        </Page>
+	    </Navigator>
+	</DockPanel>
+</App>

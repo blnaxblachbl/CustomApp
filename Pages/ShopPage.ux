@@ -1,0 +1,6 @@
+<StackPanel ux:ClassName="ShopPage" Alignment="Center">
+	<Text Alignment="Center">This is the shop page.</Text>
+	<MailInput PlaceholderText="Type your email here..."/>
+	<MailInput PlaceholderText="Type your password..."/>
+	<MailInput PlaceholderText="Submit your password..."/>
+</StackPanel>
