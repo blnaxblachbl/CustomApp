@@ -12,7 +12,7 @@ namespace Outracks.Simulator
 		public GeneratedApplication()
 			: base(
 				new [] 
-				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("192.168.137.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("192.168.0.59"), 12124)},"C:\\Users\\blnax\\Documents\\Fuse\\CustomApp\\CustomApp.unoproj",new string[] 
+				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("192.168.100.19"), 12124)},"C:\\Users\\blnax\\Documents\\Fuse\\CustomApp\\CustomApp.unoproj",new string[] 
 				{ })
 		{
 			Runtime.Bundle.Initialize("CustomApp");

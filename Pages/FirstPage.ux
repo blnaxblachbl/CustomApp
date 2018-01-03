@@ -1,3 +1,25 @@
 <Panel ux:ClassName="FirstPage" Alignment="Center">
-	<Text Alignment="Center">This is the first page.</Text>
+	<StatusBarBackground Dock="Top" />
+	<BottomBarBackground Dock="Bottom" />
+
+	<SystemSounds ux:Global="SystemSounds" />
+
+	<JavaScript>
+		var SystemSounds = require("SystemSounds");
+		var Observable = require("FuseJS/Observable");
+		var version = Observable("Press me!");
+
+		function button_pressed() {
+			version.value = SystemSounds.version("-version");
+		}
+
+		module.exports = {
+			button_pressed: button_pressed,
+			version: version
+		};
+	</JavaScript>
+
+	<StackPanel>
+		<Button Text="{version}" Clicked="{button_pressed}" />
+	</StackPanel>
 </Panel>

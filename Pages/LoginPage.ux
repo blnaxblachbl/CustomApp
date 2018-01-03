@@ -1,10 +1,25 @@
 <StackPanel ux:ClassName="LoginPage" Alignment="Center">
 	<JavaScript>
-
 		var Observable = require("FuseJS/Observable")
 
 		var email = Observable("")
 		var pass = Observable("")
+
+		var graphql = require('JavaScript/graphql.js');
+       	var graph = graphql("https://api.graph.cool/simple/v1/cj9m541967scw0121myxxur9x", {
+            method: "POST", // POST by default.
+            asJSON :  true ,
+            headers: {
+                "Access-Token": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTY4NzQzODIsImlhdCI6MTUxNDI4MjM4MiwicHJvamVjdElkIjoiY2o5bTU0MTk2N3NjdzAxMjFteXh4dXI5eCIsInVzZXJJZCI6ImNqOW01dmhucXowZWgwMTU1cnZyOGgyNWIiLCJtb2RlbE5hbWUiOiJVc2VyIn0.kpmQ-eNvhB8FtCo7Huw73Fub0yECe3fLZJJUQxrUmXE"
+            }
+        })
+        var allUsers = graph(`
+            query { 
+                allUsers {
+                    id
+                }
+            }`
+		)
 		
 		function logIn(){
 			if (email.value == "tit" && pass.value == "123"){
@@ -13,6 +28,12 @@
 				return null
 			}
 		}
+
+        allUsers().then(function (users) {
+            console.log(JSON.stringify(users))
+        }).catch((err) => {
+            console.log(JSON.stringify(err))
+        });
 
 		module.export = {
 			logIn: logIn,

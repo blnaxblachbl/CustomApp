@@ -54,6 +54,10 @@ Fuse
 Fuse.WebSockets
 Polyfills.Window:js/EventTarget.js:eventtarget-cda77f1e.js:js/fetch.js:fetch-f9fc7fb6.js:js/File.js:file-3f85c9b6.js:js/localStorage.js:localstorage-f922aa60.js:js/WebSocketAPI.js:websocketapi-9e6adbc9.js:js/Window.js:window-4e47903c.js:js/WindowBase64.js:windowbase64-461def11.js:js/WindowTimers.js:windowtimers-f6141d00.js:js/XMLHttpRequest.js:xmlhttprequest-f75767d0.js
 FuseJS
+Android.ActivityUtils
+Uno.Permissions
+Fuse.ImageTools
+Fuse.Camera
 Outracks.Simulator.Common.Uno
 Fuse.Preview.Core:fight.png:fight-8c16f395.png
-CustomApp
+CustomApp:JavaScript/graphql.js:graphql-193e8e75.js

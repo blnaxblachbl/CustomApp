@@ -71,13 +71,13 @@ public partial class RouterPage: Fuse.Controls.Panel
         static global::Uno.UX.Selector __selector0 = "shopPage";
     }
     internal global::Fuse.Navigation.Router router;
-    internal global::Fuse.Reactive.EventBinding temp_eb2;
     internal global::Fuse.Reactive.EventBinding temp_eb3;
+    internal global::Fuse.Reactive.EventBinding temp_eb4;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
         "router",
-        "temp_eb2",
-        "temp_eb3"
+        "temp_eb3",
+        "temp_eb4"
     };
     static RouterPage()
     {
@@ -96,9 +96,9 @@ public partial class RouterPage: Fuse.Controls.Panel
         var shopPage = new Template2(this, this);
         var temp5 = new global::Fuse.Controls.Grid();
         var temp6 = new global::Fuse.Controls.Button();
-        temp_eb2 = new global::Fuse.Reactive.EventBinding(temp);
+        temp_eb3 = new global::Fuse.Reactive.EventBinding(temp);
         var temp7 = new global::Fuse.Controls.Button();
-        temp_eb3 = new global::Fuse.Reactive.EventBinding(temp1);
+        temp_eb4 = new global::Fuse.Reactive.EventBinding(temp1);
         temp2.Code = "\n\t    module.exports = {\n\t        gotoFirst: function() { router.goto(\"firstPage\"); },\n\t        gotoSecond: function() { router.goto(\"secondPage\"); },\n\t        gotoShop: function() { router.goto(\"shopPage\"); },\n\t    };\n\t";
         temp2.LineNumber = 2;
         temp2.FileName = "Pages/RouterPage.ux";
@@ -115,16 +115,16 @@ public partial class RouterPage: Fuse.Controls.Panel
         temp5.Children.Add(temp7);
         temp6.Text = "First page";
         temp6.Padding = float4(20f, 20f, 20f, 20f);
-        global::Fuse.Gestures.Clicked.AddHandler(temp6, temp_eb2.OnEvent);
-        temp6.Bindings.Add(temp_eb2);
+        global::Fuse.Gestures.Clicked.AddHandler(temp6, temp_eb3.OnEvent);
+        temp6.Bindings.Add(temp_eb3);
         temp7.Text = "Second page";
         temp7.Padding = float4(20f, 20f, 20f, 20f);
-        global::Fuse.Gestures.Clicked.AddHandler(temp7, temp_eb3.OnEvent);
-        temp7.Bindings.Add(temp_eb3);
+        global::Fuse.Gestures.Clicked.AddHandler(temp7, temp_eb4.OnEvent);
+        temp7.Bindings.Add(temp_eb4);
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router);
-        __g_nametable.Objects.Add(temp_eb2);
         __g_nametable.Objects.Add(temp_eb3);
+        __g_nametable.Objects.Add(temp_eb4);
         this.Children.Add(temp2);
         this.Children.Add(router);
         this.Children.Add(temp3);

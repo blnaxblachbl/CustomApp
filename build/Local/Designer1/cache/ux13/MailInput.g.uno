@@ -25,8 +25,8 @@ public partial class MailInput: Fuse.Controls.Panel
     {
         var temp = new global::Fuse.Reactive.Constant(this);
         Input = new global::Fuse.Controls.TextInput();
-        Input_PlaceholderText_inst = new OneButtonApp_FuseControlsTextInput_PlaceholderText_Property(Input, __selector0);
-        var temp1 = new global::Fuse.Reactive.Property(temp, OneButtonApp_accessor_MailInput_PlaceholderText.Singleton);
+        Input_PlaceholderText_inst = new CustomApp_FuseControlsTextInput_PlaceholderText_Property(Input, __selector0);
+        var temp1 = new global::Fuse.Reactive.Property(temp, CustomApp_accessor_MailInput_PlaceholderText.Singleton);
         var temp2 = new global::Fuse.Reactive.DataBinding(Input_PlaceholderText_inst, temp1, Fuse.Reactive.BindingMode.Default);
         this.PlaceholderText = "";
         Input.PlaceholderColor = float4(0.8f, 0.8f, 0.8f, 1f);

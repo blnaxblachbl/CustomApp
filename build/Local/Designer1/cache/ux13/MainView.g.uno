@@ -23,10 +23,10 @@ public partial class MainView: Fuse.App
         {
             var __self = new global::Fuse.Controls.Page();
             Mail = new global::Fuse.Controls.TextInput();
-            Mail_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
+            Mail_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Mail, __selector0);
             var temp = new global::Fuse.Reactive.Data("email");
             Password = new global::Fuse.Controls.TextInput();
-            Password_Value_inst = new OneButtonApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
+            Password_Value_inst = new CustomApp_FuseControlsTextInputControl_Value_Property(Password, __selector0);
             var temp1 = new global::Fuse.Reactive.Data("pass");
             var temp2 = new global::Fuse.Reactive.Data("logIn");
             var temp3 = new global::Fuse.Controls.StackPanel();
@@ -62,7 +62,6 @@ public partial class MainView: Fuse.App
             Password.Name = __selector3;
             Password.Bindings.Add(temp6);
             temp7.Text = "Log in";
-            temp7.Color = float4(0.06666667f, 0.1333333f, 0.2f, 1f);
             temp7.Width = new Uno.UX.Size(75f, Uno.UX.Unit.Percent);
             temp7.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
             temp7.Padding = float4(20f, 20f, 20f, 20f);
@@ -213,6 +212,7 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.ParentSize, "ParentSize");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Width, "Width");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Height, "Height");
+        global::Uno.UX.Resource.SetGlobalKey(global::FirstPage.SystemSounds, "SystemSounds");
     }
     [global::Uno.UX.UXConstructor]
     public MainView()
@@ -230,34 +230,36 @@ public partial class MainView: Fuse.App
         var temp6 = new global::Fuse.FileSystem.FileSystemModule();
         var temp7 = new global::Fuse.Storage.StorageModule();
         var temp8 = new global::Fuse.WebSocket.WebSocketClientModule();
-        var temp9 = new global::Polyfills.Window.WindowModule();
-        var temp10 = new global::FuseJS.Globals();
-        var temp11 = new global::FuseJS.Lifecycle();
-        var temp12 = new global::FuseJS.Environment();
-        var temp13 = new global::FuseJS.Base64();
-        var temp14 = new global::FuseJS.Bundle();
-        var temp15 = new global::FuseJS.FileReaderImpl();
-        var temp16 = new global::FuseJS.UserEvents();
+        var temp9 = new global::Fuse.ImageTools.ImageTools();
+        var temp10 = new global::Fuse.Camera.Camera();
+        var temp11 = new global::Polyfills.Window.WindowModule();
+        var temp12 = new global::FuseJS.Globals();
+        var temp13 = new global::FuseJS.Lifecycle();
+        var temp14 = new global::FuseJS.Environment();
+        var temp15 = new global::FuseJS.Base64();
+        var temp16 = new global::FuseJS.Bundle();
+        var temp17 = new global::FuseJS.FileReaderImpl();
+        var temp18 = new global::FuseJS.UserEvents();
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);
-        var temp17 = new global::Fuse.Reactive.JavaScript(__g_nametable);
+        var temp19 = new global::Fuse.Reactive.JavaScript(__g_nametable);
         router1 = new global::Fuse.Navigation.Router();
-        var temp18 = new global::Fuse.Controls.DockPanel();
-        var temp19 = new global::Fuse.Controls.Navigator();
+        var temp20 = new global::Fuse.Controls.DockPanel();
+        var temp21 = new global::Fuse.Controls.Navigator();
         var loginPage = new Template(this, this);
         var routerPage = new Template1(this, this);
-        temp17.Code = "\n\n\t\tvar Observable = require(\"FuseJS/Observable\")\n\n\t\tvar email = Observable(\"\")\n\t\tvar pass = Observable(\"\")\n\t\t\n\t\tfunction logIn(){\n\t\t\tif (email.value == \"tit\" && pass.value == \"123\"){\n\t\t\t\trouter1.goto(\"routerPage\")\n\t\t\t}else{\n\t\t\t\treturn null\n\t\t\t}\n\t\t}\n\n\t    module.exports = {\n\t\t\temail: email,\n\t\t\tpass: pass,\n\t        logIn: logIn,\n\t    };\n\t";
-        temp17.LineNumber = 2;
-        temp17.FileName = "MainView.ux";
+        temp19.Code = "\n\n\t\tvar Observable = require(\"FuseJS/Observable\")\n\n\t\tvar email = Observable(\"\")\n\t\tvar pass = Observable(\"\")\n\n\t\tvar graphql = require('JavaScript/graphql.js');\n       \tvar graph = graphql(\"https://api.graph.cool/simple/v1/cj9m541967scw0121myxxur9x\", {\n            method: \"POST\", // POST by default.\n            asJSON :  true ,\n            headers: {\n                \"Access-Token\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTY4NzQzODIsImlhdCI6MTUxNDI4MjM4MiwicHJvamVjdElkIjoiY2o5bTU0MTk2N3NjdzAxMjFteXh4dXI5eCIsInVzZXJJZCI6ImNqOW01dmhucXowZWgwMTU1cnZyOGgyNWIiLCJtb2RlbE5hbWUiOiJVc2VyIn0.kpmQ-eNvhB8FtCo7Huw73Fub0yECe3fLZJJUQxrUmXE\"\n            }\n        })\n        var allUsers = graph(`\n            query { \n                allUsers {\n                    id\n                }\n            }`\n\t\t)\n\t\t\n\t\tfunction logIn(){\n\t\t\tif (email.value == \"tit\" && pass.value == \"123\"){\n\t\t\t\trouter1.goto(\"routerPage\")\n\t\t\t}else{\n\t\t\t\treturn null\n\t\t\t}\n\t\t}\n\n        allUsers().then(function (users) {\n            console.log(\"\\n\" + JSON.stringify(users))\n        }).catch((err) => {\n            console.log(\"\\n\" + JSON.stringify(err))\n        });\n\n\t    module.exports = {\n\t\t\temail: email,\n\t\t\tpass: pass,\n\t        logIn: logIn,\n\t    };\n\t";
+        temp19.LineNumber = 2;
+        temp19.FileName = "MainView.ux";
         router1.Name = __selector0;
-        temp18.Children.Add(temp19);
-        temp19.DefaultTemplate = "loginPage";
-        temp19.Templates.Add(loginPage);
-        temp19.Templates.Add(routerPage);
+        temp20.Children.Add(temp21);
+        temp21.DefaultTemplate = "loginPage";
+        temp21.Templates.Add(loginPage);
+        temp21.Templates.Add(routerPage);
         __g_nametable.This = this;
         __g_nametable.Objects.Add(router1);
-        this.Children.Add(temp17);
+        this.Children.Add(temp19);
         this.Children.Add(router1);
-        this.Children.Add(temp18);
+        this.Children.Add(temp20);
     }
     static global::Uno.UX.Selector __selector0 = "router1";
 }
