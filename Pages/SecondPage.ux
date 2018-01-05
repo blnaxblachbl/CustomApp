@@ -1,4 +1,4 @@
-<StackPanel ux:ClassName="SecondPage" Alignment="Center">
+<StackPanel ux:Class="SecondPage" Alignment="Center">
 	<Text Alignment="Center">This is the second page.</Text>
 	<Button Text="Go to shop page" Padding="20" Clicked="{gotoShop}"/>
 </StackPanel>

@@ -2,7 +2,7 @@
 public partial class FirstPage: Fuse.Controls.Panel
 {
     global::Uno.UX.Property<string> temp_Text_inst;
-    [global::Uno.UX.UXGlobalResource("SystemSounds")] public static readonly SystemSounds SystemSounds;
+    [global::Uno.UX.UXGlobalResource("FFmpegLib")] public static readonly FFmpegLib FFmpegLib;
     internal global::Fuse.Reactive.EventBinding temp_eb1;
     global::Uno.UX.NameTable __g_nametable;
     static string[] __g_static_nametable = new string[] {
@@ -10,8 +10,13 @@ public partial class FirstPage: Fuse.Controls.Panel
     };
     static FirstPage()
     {
-        SystemSounds = new global::SystemSounds();
-        global::Uno.UX.Resource.SetGlobalKey(SystemSounds, "SystemSounds");
+        FFmpegLib = new global::FFmpegLib();
+        global::Uno.UX.Resource.SetGlobalKey(FFmpegLib, "FFmpegLib");
+    }
+    [global::Uno.UX.UXConstructor]
+    public FirstPage()
+    {
+        InitializeUX();
     }
     void InitializeUX()
     {
@@ -29,7 +34,7 @@ public partial class FirstPage: Fuse.Controls.Panel
         this.Alignment = Fuse.Elements.Alignment.Center;
         global::Fuse.Controls.DockPanel.SetDock(temp3, Fuse.Layouts.Dock.Top);
         global::Fuse.Controls.DockPanel.SetDock(temp4, Fuse.Layouts.Dock.Bottom);
-        temp5.Code = "\n\t\tvar SystemSounds = require(\"SystemSounds\");\n\t\tvar Observable = require(\"FuseJS/Observable\");\n\t\tvar version = Observable(\"Press me!\");\n\n\t\tfunction button_pressed() {\n\t\t\tversion.value = SystemSounds.version(\"-version\");\n\t\t}\n\n\t\tmodule.exports = {\n\t\t\tbutton_pressed: button_pressed,\n\t\t\tversion: version\n\t\t};\n\t";
+        temp5.Code = "\n\t\tvar FFmpegLib = require(\"FFmpegLib\");\n\t\tvar Observable = require(\"FuseJS/Observable\");\n\t\tvar version = Observable(\"Press me!\");\n\n\t\tfunction button_pressed() {\n\t\t\tversion.value = FFmpegLib.commands(\"-version\");\n\t\t}\n\n\t\tmodule.exports = {\n\t\t\tbutton_pressed: button_pressed,\n\t\t\tversion: version\n\t\t};\n\t";
         temp5.LineNumber = 7;
         temp5.FileName = "Pages/FirstPage.ux";
         temp6.Children.Add(temp);

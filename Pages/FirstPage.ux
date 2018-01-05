@@ -1,16 +1,16 @@
-<Panel ux:ClassName="FirstPage" Alignment="Center">
+<Panel ux:Class="FirstPage" Alignment="Center">
 	<StatusBarBackground Dock="Top" />
 	<BottomBarBackground Dock="Bottom" />
 
-	<SystemSounds ux:Global="SystemSounds" />
+	<FFmpegLib ux:Global="FFmpegLib" />
 
 	<JavaScript>
-		var SystemSounds = require("SystemSounds");
+		var FFmpegLib = require("FFmpegLib");
 		var Observable = require("FuseJS/Observable");
 		var version = Observable("Press me!");
 
 		function button_pressed() {
-			version.value = SystemSounds.version("-version");
+			version.value = FFmpegLib.commands("-version");
 		}
 
 		module.exports = {

@@ -5,6 +5,11 @@ public partial class SecondPage: Fuse.Controls.StackPanel
     static SecondPage()
     {
     }
+    [global::Uno.UX.UXConstructor]
+    public SecondPage()
+    {
+        InitializeUX();
+    }
     void InitializeUX()
     {
         var temp = new global::Fuse.Reactive.Data("gotoShop");

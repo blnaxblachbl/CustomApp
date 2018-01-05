@@ -82,6 +82,11 @@ public partial class RouterPage: Fuse.Controls.Panel
     static RouterPage()
     {
     }
+    [global::Uno.UX.UXConstructor]
+    public RouterPage()
+    {
+        InitializeUX();
+    }
     void InitializeUX()
     {
         __g_nametable = new global::Uno.UX.NameTable(null, __g_static_nametable);

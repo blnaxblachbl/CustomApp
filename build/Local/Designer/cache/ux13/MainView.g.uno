@@ -212,7 +212,7 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.ParentSize, "ParentSize");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Width, "Width");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Height, "Height");
-        global::Uno.UX.Resource.SetGlobalKey(global::FirstPage.SystemSounds, "SystemSounds");
+        global::Uno.UX.Resource.SetGlobalKey(global::FirstPage.FFmpegLib, "FFmpegLib");
     }
     [global::Uno.UX.UXConstructor]
     public MainView()

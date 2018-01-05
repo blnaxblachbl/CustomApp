@@ -1,4 +1,4 @@
-<Panel ux:ClassName="RouterPage">
+<Panel ux:Class="RouterPage">
     <JavaScript>
 	    module.exports = {
 	        gotoFirst: function() { router.goto("firstPage"); },
